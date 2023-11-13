@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    registration
+{% endblock title %}
+
+{% block body %}
+    <h1>Log in to review website</h1>
+    <form action="{{ url_for('login')}}" method="post">
+        <label for="username">User Name</label>
+        
+        {% if error_wrong_pass %}
+            <input id="username" type="text" name = "username", placeholder="username" required, value="{{ username }}">    
+        {% else %}
+            <input id="username" type="text" name = "username", placeholder="username" required>
+        {% endif %}
+        <br>
+        
+        {% if error_no_user %}
+            <ul><li>No user with that name exists, try again</li></ul>
+        {% endif %}
+        
+        <label for="password">Password</label>
+        <input id="password" type="password" name = "password" placeholder="password" minlength="5" required><br>
+        
+        {% if error_wrong_pass %}
+            <ul><li>Incorrect password, please try again</li></ul>        
+        {% endif %}
+        
+        <input type="submit" value="Log in">
+    </form>
+
+    <p> Not registered yet? <a href="{{ url_for('registration') }}">Sign in here</a></p>
+{% endblock body %}

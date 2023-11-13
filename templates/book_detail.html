@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{ book.title }}
+{% endblock %}
+
+{% block body %}
+    <div id="bookdetail">
+
+        <div id="details">
+            <h1>{{ book.title }}</h1>
+            <h2> Book details</h2>
+            <ul>
+                <li>ISBN code: {{ book.isbn }}</li>
+                <li>Title: {{ book.title }}</li>
+                <li>Author: {{ book.author }}</li>
+                <li>Year published: {{ book.year }}</li>
+
+                {% if gr_review_count %}
+                    <li>Number of reviews on <strong>GoodReads</strong>: {{ gr_review_count }}</li>
+                    <li>Average score on <strong>GoodReads</strong>: {{ gr_average_rate }}</li>
+                {% endif %}
+
+            </ul>
+
+            <h2> Book reviews</h2>
+            {% if reviews %}
+                <ul>
+                    {% for review in reviews %}
+                        <li>
+                            <strong>Rate:</strong> {{ review.rate }}  <br>
+                            <strong>Review:</strong> {{ review.review }}
+                        </li>
+                    {% endfor %}
+                </ul>
+
+            {% else %}
+                <p>No reviews yet, you're welcome to leave the first one!</p>
+            {% endif %}
+
+        </div>
+
+        {% if not already_reviewed %}
+            <div id="new-review">
+                <h2> Add a new review</h2>
+
+                <form action="{{ url_for('bookDetail', isbn=book.isbn)}}" method="post">
+                    <label for="rate">Rate the book between 1 (didn't like) to 5 (loved)</label><br>
+                    <input id="rate" type="number" name = "rate" min="1", max="5"><br>
+                    <textarea name = "review", placeholder="Write your review"></textarea><br>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+
+        {% endif %}
+
+    </div>
+
+    <a href="{{ url_for('index') }}">New search</a>
+
+{% endblock %}

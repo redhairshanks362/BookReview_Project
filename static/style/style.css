@@ -1,0 +1,103 @@
+html, body, .container {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  font-family: 'Lato';
+  src: url("static/font/Lato/Lato-Regular.ttf");
+}
+
+body .top-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: black;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+body .top-bar p {
+  -webkit-box-flex: 4;
+      -ms-flex: 4;
+          flex: 4;
+  color: white;
+  margin: 0;
+  padding-left: 1.5%;
+}
+
+body .top-bar a {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: right;
+  margin-right: 1.5%;
+  text-decoration: none;
+  color: white;
+}
+
+body .top-bar a:hover {
+  color: red;
+}
+
+body .content {
+  height: 100%;
+  overflow: scroll;
+  padding-left: 1.5%;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(indianred), to(white));
+  background-image: linear-gradient(indianred, white);
+}
+
+body .content h1, body .content h2, body .content form, body .content p {
+  margin: 0;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  color: white;
+}
+
+body .content ul {
+  padding-left: 0;
+}
+
+body .content ul li {
+  color: white;
+  list-style: none;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+body .content a {
+  text-decoration: none;
+  color: white;
+}
+
+body .content a:hover {
+  color: black;
+}
+
+body .content form input {
+  margin-top: 0.5%;
+  margin-bottom: 0.5%;
+}
+
+body .content #bookdetail {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 5%;
+}
+
+body .content #bookdetail #details {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+  padding-right: 5%;
+}
+
+body .content #bookdetail #new-review {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+}
+/*# sourceMappingURL=style.css.map */

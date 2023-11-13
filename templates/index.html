@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Search for Books
+{% endblock %}
+
+{% block body %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/style.css') }}">
+    <h1>Search for a book to review</h1>
+
+    <form action="{{ url_for('results') }}" method="post">
+        <label for="book_search">Search for a book by ISBN, title, or author</label><br>
+        <input type="text" id="book_search" name="book_search"><br><br>
+
+        <label for="genre_filter">Filter by Genre:</label>
+        <select id="genre_filter" name="genre_filter">
+            <option value="">All Genres</option>
+            <option value="Mystery">Mystery</option>
+            <option value="Romance">Romance</option>
+            <option value="Science Fiction">Science Fiction</option>
+            <!-- Add more genre options as needed -->
+        </select><br><br>
+
+        <label for="year_filter">Filter by Publication Year:</label>
+        <select id="year_filter" name="year_filter">
+            <option value="">All Years</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+            <!-- Add more year options as needed -->
+        </select><br><br>
+
+        <label for="rating_filter">Filter by Rating:</label>
+        <select id="rating_filter" name="rating_filter">
+            <option value="">All Ratings</option>
+            <option value="1">1 Star</option>
+            <option value="2">2 Stars</option>
+            <option value="3">3 Stars</option>
+            <option value="4">4 Stars</option>
+            <option value="5">5 Stars</option>
+        </select><br><br>
+
+        <input type="submit" value="Search">
+    </form>
+
+{% endblock %}

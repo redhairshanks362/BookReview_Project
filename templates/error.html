@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    error
+{% endblock %}
+
+{% block body %}
+
+    {% if no_result %}
+        <h1>No results found</h1>
+        <p>Unfortunately, none of the books in our database matched your search.</p>
+        <a href="{{ url_for('index') }}">New search</a>
+    {% endif %}
+
+    {% if logged_in %}
+        <h1>Already logged in</h1>
+        <p>You're already logged in as <strong>{{ username }}</strong>.</p>
+        <a href="{{ url_for('logout') }}">Log out</a> in order to switch user or register as a new user.
+    {% endif %}
+
+{% endblock body %}
