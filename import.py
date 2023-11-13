@@ -1,12 +1,3 @@
-"""
-This module is part of the Books web application developed for the second project in the "CS50's Web Programming with Python
-and JavaScript" course.
-This module creates tables in a preconfigured postgresql database and populates one of the tables with data from the
-'books.csv' file.
-This module should be executed once when initializing the web application. It could also be run in order to reset the
-database and repopulate with the csv file data.
-"""
-
 import os
 import csv
 
